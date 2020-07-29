@@ -1,14 +1,23 @@
 import React, {Component} from 'react';
-import {Scene, Router, Lightbox, Drawer} from 'react-native-router-flux';
-import Tabbar from '../components/Tabbar';
-const router = () => {
+import {View, Text} from 'react-native';
+import {NavigationContainer} from '@react-navigation/native';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import Index from '../components/Index/index';
+import Find from '../components/Find/index';
+import Order from '../components/Order/index';
+import Mine from '../components/Mine/index';
+const Tabs = createBottomTabNavigator();
+
+const RootTabs = () => {
   return (
-    <Router>
-      <Lightbox>
-        <Scene key="Tabbar" component={Tabbar} />
-      </Lightbox>
-    </Router>
+    <NavigationContainer>
+      <Tabs.Navigator>
+        <Tabs.Screen name="Index" component={Index} />
+        <Tabs.Screen name="Find" component={Find} />
+        <Tabs.Screen name="Order" component={Order} />
+        <Tabs.Screen name="Mine" component={Mine} />
+      </Tabs.Navigator>
+    </NavigationContainer>
   );
 };
-
-export default router;
+export default RootTabs;
