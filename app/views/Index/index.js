@@ -11,11 +11,10 @@ import {
   Linking,
   Easing,
 } from 'react-native';
-
 export default function Index() {
   return (
     <View>
-      <Text>首页</Text>
+      <Text> 222首页</Text>
     </View>
   );
 }
