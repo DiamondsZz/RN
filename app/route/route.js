@@ -14,7 +14,13 @@ const Tabs = createBottomTabNavigator();
 const RootTabs = () => {
   return (
     <NavigationContainer>
-      <Tabs.Navigator tabBarOptions={{activeTintColor: '#000'}}>
+      <Tabs.Navigator
+        tabBarOptions={{
+          activeTintColor: '#000',
+          labelStyle: {
+           fontSize:16
+          },
+        }}>
         <Tabs.Screen
           name="Home"
           component={Index}
@@ -24,7 +30,7 @@ const RootTabs = () => {
               return (
                 <AntDesign
                   name="home"
-                  size={16}
+                  size={18}
                   color={focused ? '#FFC300' : '#000'}
                 />
               );
@@ -40,7 +46,7 @@ const RootTabs = () => {
               return (
                 <AntDesign
                   name="find"
-                  size={16}
+                  size={18}
                   color={focused ? '#FFC300' : '#000'}
                 />
               );
@@ -56,7 +62,7 @@ const RootTabs = () => {
               return (
                 <AntDesign
                   name="filetext1"
-                  size={16}
+                  size={18}
                   color={focused ? '#FFC300' : '#000'}
                 />
               );
@@ -72,7 +78,7 @@ const RootTabs = () => {
               return (
                 <AntDesign
                   name="user"
-                  size={16}
+                  size={18}
                   color={focused ? '#FFC300' : '#000'}
                 />
               );
