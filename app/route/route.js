@@ -6,18 +6,29 @@ import Find from '../views/Find/index';
 import Order from '../views/Order/index';
 import Mine from '../views/Mine/index';
 import AntDesign from 'react-native-vector-icons/AntDesign';
+
+//创建底部Tab导航
 const Tabs = createBottomTabNavigator();
 
+//生成导航
 const RootTabs = () => {
   return (
     <NavigationContainer>
-      <Tabs.Navigator>
+      <Tabs.Navigator tabBarOptions={{activeTintColor: '#000'}}>
         <Tabs.Screen
           name="Home"
           component={Index}
           options={{
             tabBarLabel: '首页',
-            tabBarIcon: () => <AntDesign name="home" size={16} />,
+            tabBarIcon: ({focused, color, size}) => {
+              return (
+                <AntDesign
+                  name="home"
+                  size={16}
+                  color={focused ? '#FFC300' : '#000'}
+                />
+              );
+            },
           }}
         />
         <Tabs.Screen
@@ -25,7 +36,15 @@ const RootTabs = () => {
           component={Find}
           options={{
             tabBarLabel: '发现',
-            tabBarIcon: () => <AntDesign name="find" size={16} />,
+            tabBarIcon: ({focused, color, size}) => {
+              return (
+                <AntDesign
+                  name="find"
+                  size={16}
+                  color={focused ? '#FFC300' : '#000'}
+                />
+              );
+            },
           }}
         />
         <Tabs.Screen
@@ -33,7 +52,15 @@ const RootTabs = () => {
           component={Order}
           options={{
             tabBarLabel: '订单',
-            tabBarIcon: () => <AntDesign name="filetext1" size={16} />,
+            tabBarIcon: ({focused, color, size}) => {
+              return (
+                <AntDesign
+                  name="filetext1"
+                  size={16}
+                  color={focused ? '#FFC300' : '#000'}
+                />
+              );
+            },
           }}
         />
         <Tabs.Screen
@@ -41,7 +68,15 @@ const RootTabs = () => {
           component={Mine}
           options={{
             tabBarLabel: '我的',
-            tabBarIcon: () => <AntDesign name="user" size={16} />,
+            tabBarIcon: ({focused, color, size}) => {
+              return (
+                <AntDesign
+                  name="user"
+                  size={16}
+                  color={focused ? '#FFC300' : '#000'}
+                />
+              );
+            },
           }}
         />
       </Tabs.Navigator>
