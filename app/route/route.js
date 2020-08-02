@@ -18,7 +18,7 @@ const RootTabs = () => {
         tabBarOptions={{
           activeTintColor: '#000',
           labelStyle: {
-           fontSize:16
+           fontSize:12
           },
         }}>
         <Tabs.Screen
@@ -30,7 +30,7 @@ const RootTabs = () => {
               return (
                 <AntDesign
                   name="home"
-                  size={18}
+                  size={24}
                   color={focused ? '#FFC300' : '#000'}
                 />
               );
@@ -46,7 +46,7 @@ const RootTabs = () => {
               return (
                 <AntDesign
                   name="find"
-                  size={18}
+                  size={24}
                   color={focused ? '#FFC300' : '#000'}
                 />
               );
@@ -62,7 +62,7 @@ const RootTabs = () => {
               return (
                 <AntDesign
                   name="filetext1"
-                  size={18}
+                  size={24}
                   color={focused ? '#FFC300' : '#000'}
                 />
               );
@@ -78,7 +78,7 @@ const RootTabs = () => {
               return (
                 <AntDesign
                   name="user"
-                  size={18}
+                  size={24}
                   color={focused ? '#FFC300' : '#000'}
                 />
               );
