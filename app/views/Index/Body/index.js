@@ -9,6 +9,7 @@ import {
 } from 'react-native';
 import Swiper from 'react-native-swiper';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
+import List from './list';
 export default class Body extends Component {
   constructor(props) {
     super(props);
@@ -17,6 +18,26 @@ export default class Body extends Component {
   render() {
     return (
       <ScrollView>
+        {/*头部*/}
+        <View style={styles.head}>
+          <View style={styles.headItem}>
+            <FontAwesome name="qrcode" size={24} />
+            <Text style={styles.headItemText}>扫一扫</Text>
+          </View>
+          <View style={styles.headItem}>
+            <FontAwesome name="barcode" size={24} />
+            <Text style={styles.headItemText}>付款码</Text>
+          </View>
+          <View style={styles.headItem}>
+            <FontAwesome name="credit-card-alt" size={24} />
+            <Text style={styles.headItemText}>红包/卡券</Text>
+          </View>
+          <View style={styles.headItem}>
+            <FontAwesome name="bicycle" size={24} />
+            <Text style={styles.headItemText}>骑车</Text>
+          </View>
+        </View>
+
         {/*Nav选项菜单*/}
         <View>
           <Swiper style={styles.nav} paginationStyle={styles.navPagination}>
@@ -183,12 +204,31 @@ export default class Body extends Component {
             />
           </View>
         </Swiper>
+
+        <View>
+          <List />
+        </View>
       </ScrollView>
     );
   }
 }
 
 const styles = StyleSheet.create({
+  //头部
+  head: {
+    backgroundColor: '#FFC300',
+    paddingHorizontal: 40,
+    paddingVertical: 12,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
+  headItem: {
+    alignItems: 'center',
+  },
+  headItemText: {
+    marginTop: 8,
+    fontWeight: '200',
+  },
   //选项菜单
   nav: {
     height: 200,
@@ -207,9 +247,10 @@ const styles = StyleSheet.create({
   },
   itemText: {
     fontSize: 12,
+    marginTop: 6,
   },
   navPagination: {
-    bottom: 6,
+    bottom: 4,
   },
   //轮播
   swiper: {

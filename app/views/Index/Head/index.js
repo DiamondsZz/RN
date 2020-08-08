@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {Text, View, StyleSheet, TextInput} from 'react-native';
 import AntDesign from 'react-native-vector-icons/AntDesign';
+
 export default function Head() {
   return (
     <View style={styles.indexHead}>
@@ -13,7 +14,7 @@ export default function Head() {
       </View>
 
       <View style={styles.input}>
-        <TextInput />
+        <TextInput style={styles.textInput} />
       </View>
       <View style={styles.icons}>
         <Text>
@@ -29,7 +30,7 @@ const styles = StyleSheet.create({
     paddingTop: 14,
     paddingLeft: 20,
     paddingRight: 20,
-    paddingBottom: 10,
+    paddingBottom: 4,
     backgroundColor: '#FFC300',
     flexDirection: 'row',
     alignItems: 'center',
@@ -47,11 +48,14 @@ const styles = StyleSheet.create({
   },
   input: {
     flex: 6,
-    height: 36,
+    height:36,
     backgroundColor: '#fff',
-    borderRadius: 10,
+    borderRadius: 14,
     marginLeft: 16,
     marginRight: 16,
+  },
+  textInput:{
+    fontSize:12
   },
   icons: {
     flex: 1,
