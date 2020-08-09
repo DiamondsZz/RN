@@ -1,6 +1,28 @@
 import React, {Component} from 'react';
-import {View, Text, StyleSheet} from 'react-native';
-import {Longlist} from 'beeshell';
+import {View, Text, FlatList, StyleSheet} from 'react-native';
+
+const DATA = [
+  {
+    id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
+    title: 'First Item',
+  },
+  {
+    id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f63',
+    title: 'Second Item',
+  },
+  {
+    id: '58694a0f-3da1-471f-bd96-145571e29d72',
+    title: 'Third Item',
+  },
+];
+const Item = ({title}) => {
+  return (
+    <View style={styles.item}>
+      <Text style={styles.title}>{title}</Text>
+    </View>
+  );
+};
+const renderItem = ({item}) => <Item title={item.title} />;
 
 export default class List extends Component {
   constructor(props) {
@@ -8,36 +30,27 @@ export default class List extends Component {
   }
 
   render() {
-    const list = [
-      {
-        label: 222,
-      },
-    ];
-
     return (
-      <Longlist
-        ref={c => {
-          this._longlist = c;
-        }}
-        total={22}
-        data={{list}}
-        renderItem={({item, index}) => {
-          return (
-            <View
-              style={{
-                marginBottom: 12,
-                paddingVertical: 30,
-                backgroundColor: '#fff',
-              }}>
-              <Text>{item.label}</Text>
-            </View>
-          );
-        }}
-        onEndReached={() => {}}
-        onRefresh={() => {}}
-      />
+      <View style={styles.container}>
+        <FlatList
+          data={DATA}
+          renderItem={renderItem}
+          keyExtractor={item => item.id}
+        />
+      </View>
     );
   }
 }
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  container: {},
+  item: {
+    backgroundColor: '#f9c2ff',
+    padding: 20,
+    marginVertical: 8,
+    marginHorizontal: 16,
+  },
+  title: {
+    fontSize: 32,
+  },
+});
